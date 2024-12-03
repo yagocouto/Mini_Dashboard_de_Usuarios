@@ -15,3 +15,6 @@ Rotas
 API
   https://jsonplaceholder.typicode.com/
   https://fakerapi.it/
+
+Design inspiration
+  https://dribbble.com/shots/17720831-Personal-Data

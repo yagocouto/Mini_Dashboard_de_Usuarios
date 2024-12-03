@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './pages/Home';
-import Users from './components/Users';
+import Users from './pages/Users';
 import Page404 from './components/Page404';
 
 const App = () => {
