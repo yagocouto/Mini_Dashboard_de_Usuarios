@@ -1,5 +1,5 @@
 Funcionalidades
-  [x] - Home Page: Exibe uma mensagem de boas-vindas e informações gerais sobre o painel.
+  [x] - Home Page
   [x] - Lista de Usuários: Página que mostra uma lista de usuários fictícios carregados de uma API ou arquivo JSON.
   [] - Detalhes do Usuário: Ao clicar em um usuário na lista, a aplicação redireciona para uma pagina que exibe informações detalhadas sobre ele.
   [] - Configurações: Página que permite alterar configurações fictícias do painel (ex.: tema escuro/claro).
@@ -15,6 +15,7 @@ Rotas
 API
   https://jsonplaceholder.typicode.com/
   https://fakerapi.it/
+  https://randomuser.me/ <-
 
 Design inspiration
   https://dribbble.com/shots/17720831-Personal-Data
