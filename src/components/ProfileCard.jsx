@@ -6,12 +6,14 @@ import {
   contactInfo,
 } from './ProfileCard.module.css';
 
-const ProfileCard = () => {
+const ProfileCard = ({ img }) => {
   return (
     <>
       <section>
         <div className={infoHeader}>
-          <div className={sectionImg}>imagem</div>
+          <div className={sectionImg}>
+            <img src={img} alt="avatar" />
+          </div>
           <div className={sectionInfo}>
             <h3>Nome completo</h3>
             <p>@user</p>
