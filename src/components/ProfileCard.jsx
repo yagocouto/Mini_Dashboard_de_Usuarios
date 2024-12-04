@@ -7,21 +7,22 @@ import {
 } from './ProfileCard.module.css';
 import { GlobalContext } from './GlobalContext';
 
-const ProfileCard = () => {
+const ProfileCard = ({id}) => {
   const global = React.useContext(GlobalContext);
+  console.log(id)
 
-  const card = global?.[0]
+  const card = global?.[id]
     ? {
-        nome_completo: `${global[0]?.name?.first} ${global[0].name.last}`,
-        foto_de_perfil: global[0]?.picture?.large,
-        usuario: global[0]?.login?.username,
-        telefone: global[0]?.cell,
-        email: global[0]?.email,
-        cidade: global[0]?.location?.city,
+        nome_completo: `${global[id]?.name?.first} ${global[id].name.last}`,
+        foto_de_perfil: global[id]?.picture?.large,
+        usuario: global[id]?.login?.username,
+        telefone: global[id]?.cell,
+        email: global[id]?.email,
+        cidade: global[id]?.location?.city,
       }
     : {};
 
-  if (!global || global.length === 0) return <p>Carregando...</p>;
+  if (!global || global.length === id) return <p>Carregando...</p>;
   return (
     <>
       <section>
