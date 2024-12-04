@@ -1,5 +1,6 @@
 section{
   width: 30%;
+  height: max-content;
   padding: 20px;
   display: flex;
   justify-content: space-between;
@@ -8,6 +9,11 @@ section{
   border-radius: 10px;
   margin-right: 30px;
 }
+
+dd,dl{
+  margin: 0;
+}
+
 .infoHeader{
   display: flex;
   flex-direction: row;

@@ -1,7 +1,15 @@
 import React from 'react';
 import { table, thead } from './DataTable.module.css';
+import { GlobalContext } from './GlobalContext';
 
 const DataTable = () => {
+  const global = React.useContext(GlobalContext);
+
+  function handleClick(event){
+    console.log(event.target)
+  }
+
+  if (!global || global.length === 0) return <p>Carregando...</p>;
   return (
     <table className={table}>
       <thead className={thead}>
@@ -12,21 +20,13 @@ const DataTable = () => {
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>01</td>
-          <td>Yago C</td>
-          <td>28 Anos</td>
-        </tr>
-        <tr>
-          <td>01</td>
-          <td>Brenda B</td>
-          <td>28 Anos</td>
-        </tr>
-        <tr>
-          <td>01</td>
-          <td>Otto B.C</td>
-          <td>28 Anos</td>
-        </tr>
+        {global.map((dados) => (
+          <tr key={dados?.id?.value} onClick={handleClick}>
+            <td>{dados?.id?.value}</td>
+            <td>{dados?.name?.first + ' ' + dados.name.last}</td>
+            <td>{dados?.dob?.age}</td>
+          </tr>
+        ))}
       </tbody>
     </table>
   );
