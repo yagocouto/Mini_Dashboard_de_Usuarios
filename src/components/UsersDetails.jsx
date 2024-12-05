@@ -2,31 +2,53 @@ import React from 'react';
 import './UsersDetails.module.css';
 import { GlobalContext } from './GlobalContext';
 
-const UsersDetails = ({id}) => {
+const UsersDetails = ({ id }) => {
   const global = React.useContext(GlobalContext);
   console.log(global);
+
+  const dadosUsuario = global?.[id]
+    ? {
+        foto_de_perfil: global[id]?.picture?.large,
+        nome_completo: `${global[id]?.name?.first} ${global[id]?.name?.last}`,
+        sexo: global[id]?.gender,
+        data_de_nascimento: global[id]?.dob?.date, 
+        idade: global[id]?.dob?.age,
+        nacionalidade: global[id]?.nat,
+      }
+    : {};
+
+  const {
+    foto_de_perfil,
+    nome_completo,
+    sexo,
+    data_de_nascimento, // Tratar dados
+    idade,
+    nacionalidade,
+  } = dadosUsuario;
+
+  console.log(nome_completo);
 
   if (!global || global.length === 0) return <p>Carregando...</p>;
   return (
     <section>
       <div>
-        <img src={global[id]?.picture?.large} alt="avatar" />
+        <img src={foto_de_perfil} alt="avatar" />
       </div>
       <ul>
         <li>
           <h3>Detalhes Pessoais</h3>
         </li>
         <li>
-          <strong>Nome completo</strong>: Senhorita Jennie Nichols
+          <strong>Nome completo</strong>: {nome_completo}
         </li>
         <li>
-          <strong>Sexo</strong>: Feminino
+          <strong>Sexo</strong>: {sexo === 'female' ? 'Feminino' : 'Masculino'}
         </li>
         <li>
-          <strong>Data de nascimento</strong>: 08/03/1992 (30 anos)
+          <strong>Data de nascimento</strong>: 08/03/1992 ({idade})
         </li>
         <li>
-          <strong>Nacionalidade</strong>: EUA
+          <strong>Nacionalidade</strong>: {nacionalidade}
         </li>
       </ul>
 
