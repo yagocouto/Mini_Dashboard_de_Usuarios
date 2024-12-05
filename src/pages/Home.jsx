@@ -5,20 +5,13 @@ import ProfileCard from '../components/ProfileCard';
 import DataTable from '../components/DataTable';
 import { GlobalStorage } from '../components/GlobalContext';
 
-const Home = () => {
-  const [id, setID] = React.useState(0);
-  
-  function handleClick(index) {
-    setID(index);
-  }
+const Home = ({ id, handleClick }) => {
   return (
-    <GlobalStorage>
-      <div className={container}>
-        <Head title="Home" description="Essa é a descrição da Home" />
-        <ProfileCard id={id} />
-        <DataTable onClick={handleClick} />
-      </div>
-    </GlobalStorage>
+    <div className={container}>
+      <Head title="Home" description="Essa é a descrição da Home" />
+      <ProfileCard id={id} />
+      <DataTable onClick={handleClick} />
+    </div>
   );
 };
 

@@ -1,0 +1,32 @@
+section{
+  width: auto;
+  height: max-content;
+  
+  /*flex*/
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-around;
+  align-items: baseline;
+
+  padding: 20px;
+  margin-right: 30px;
+  border-radius: 10px;
+  border: 1px solid rgb(232, 234, 239);
+}
+
+ul > li {
+  list-style-type: none;
+}
+
+div > img{
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  border-radius: 20px;
+  background-color: lightgrey;
+}
