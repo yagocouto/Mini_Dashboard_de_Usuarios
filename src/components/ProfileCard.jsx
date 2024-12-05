@@ -1,15 +1,17 @@
 import React from 'react';
 import {
+  section,
   infoHeader,
   sectionImg,
   sectionInfo,
   contactInfo,
 } from './ProfileCard.module.css';
 import { GlobalContext } from './GlobalContext';
+import { Link } from 'react-router-dom';
 
-const ProfileCard = ({id}) => {
+const ProfileCard = ({ id }) => {
   const global = React.useContext(GlobalContext);
-  console.log(id)
+  console.log(id);
 
   const card = global?.[id]
     ? {
@@ -25,7 +27,7 @@ const ProfileCard = ({id}) => {
   if (!global || global.length === id) return <p>Carregando...</p>;
   return (
     <>
-      <section>
+      <section className={section}>
         <header className={infoHeader}>
           <div className={sectionImg}>
             <img src={card.foto_de_perfil} alt="foto de perfil" />
@@ -41,6 +43,9 @@ const ProfileCard = ({id}) => {
           <dd>{card.email}</dd>
           <dd>{card.cidade}</dd>
         </dl>
+        <nav>
+            <Link to="detalhes">Ver mais</Link>
+        </nav>
       </section>
     </>
   );
