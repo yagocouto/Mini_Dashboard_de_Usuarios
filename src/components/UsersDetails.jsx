@@ -14,6 +14,14 @@ const UsersDetails = ({ id }) => {
         data_de_nascimento: global[id]?.dob?.date, 
         idade: global[id]?.dob?.age,
         nacionalidade: global[id]?.nat,
+        email: global[id]?.email,
+        telefone: global[id]?.phone,
+        celular: global[id]?.cell,
+        endereco: global[id]?.location.street.name + ' ' + global[id]?.location.street.number,
+        cidade: global[id]?.location.city,
+        pais: global[id]?.location.country,
+        username: global[id]?.login.username,
+        senha: global[id]?.login.password
       }
     : {};
 
@@ -24,6 +32,15 @@ const UsersDetails = ({ id }) => {
     data_de_nascimento, // Tratar dados
     idade,
     nacionalidade,
+    email,
+    telefone,
+    celular,
+    endereco,
+    cidade,
+    pais,
+    username,
+    senha
+
   } = dadosUsuario;
 
   console.log(nome_completo);
@@ -57,13 +74,13 @@ const UsersDetails = ({ id }) => {
           <h3>Contato</h3>
         </li>
         <li>
-          <strong>E-mail</strong>: jennie.nichols@example.com
+          <strong>E-mail</strong>: {email}
         </li>
         <li>
-          <strong>Telefone</strong>: (272) 790-0888
+          <strong>Telefone</strong>: {telefone}
         </li>
         <li>
-          <strong>Celular</strong>: (489) 330-2385
+          <strong>Celular</strong>: {celular}
         </li>
       </ul>
 
@@ -72,19 +89,13 @@ const UsersDetails = ({ id }) => {
           <h3>Endereço</h3>
         </li>
         <li>
-          <strong>Rua</strong>: 8929 Valwood Pkwy
+          <strong>Rua</strong>: {endereco}
         </li>
         <li>
-          <strong>Cidade</strong>: Billings
+          <strong>Cidade</strong>: {cidade}
         </li>
         <li>
-          <strong>Estado</strong>: Michigan
-        </li>
-        <li>
-          <strong>País</strong>: Estados Unidos
-        </li>
-        <li>
-          <strong>Código Postal</strong>: 63104
+          <strong>País</strong>: {pais}
         </li>
       </ul>
 
@@ -93,19 +104,10 @@ const UsersDetails = ({ id }) => {
           <h3>Conta de Usuário</h3>
         </li>
         <li>
-          <strong>Nome de usuário</strong>: yellowpeacock117
+          <strong>Nome de usuário</strong>: {username}
         </li>
         <li>
-          <strong>Senha</strong>: addison
-        </li>
-      </ul>
-
-      <ul>
-        <li>
-          <h3>Registro</h3>
-        </li>
-        <li>
-          <strong>Data de registro</strong>: 09/07/2007 (14 anos atrás)
+          <strong>Senha</strong>: {senha}
         </li>
       </ul>
     </section>
